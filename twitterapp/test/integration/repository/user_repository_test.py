@@ -25,5 +25,9 @@ class UserRepositoryTestCase(unittest.TestCase):
         users =self.user_interactor.getUsers()
         self.assertGreaterEqual(len(users),1)
 
+    def test_delete_user(self):
+        users = self.user_interactor.deletebyidUsers("ef5da2dc-3b46-4d30-92f2-154f6f75f1ad")
+        self.assertTrue(users)
+
 if __name__ == '__main__':
     unittest.main()
