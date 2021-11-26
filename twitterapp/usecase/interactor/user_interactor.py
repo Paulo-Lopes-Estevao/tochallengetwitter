@@ -11,7 +11,7 @@ class userInteractor:
     def getUsers(self)-> userModel:
         return self.user_repository.findall_users()
 
-    def getByIdUsers(self, id: int):
+    def getByIdUsers(self, id):
         return self.user_repository.findbyid_users(id)
 
     def addUsers(self, **user) -> userModel:
