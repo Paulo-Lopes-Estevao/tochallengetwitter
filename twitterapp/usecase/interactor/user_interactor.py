@@ -19,5 +19,5 @@ class userInteractor:
         self.user_repository.create_user(**users)
         return users
 
-    def deletebyidUsers(self, id):
-        self.user_repository.delete_user(id)
+    def deletebyidUsers(self, id) -> userModel:
+        return self.user_repository.delete_user(id)
