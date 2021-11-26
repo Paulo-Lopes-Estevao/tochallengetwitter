@@ -11,7 +11,7 @@ class userRepository():
     def findall_users(self)-> User:
         return self.user.filter(state=True).values()
 
-    def findbyid_users(self,id: int)-> User:
+    def findbyid_users(self,id)-> User:
         users = self.user.objects.filter(id=id)
         return users
 
