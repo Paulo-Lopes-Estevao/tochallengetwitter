@@ -1,18 +1,17 @@
 version: '3.8'
 
 services:
-  web:
-    stdin_open: true
-    build: .
-    command: > 
-      bash -c "
-      python manage.py collectstatic --no-input && python manage.py runserver 0.0.0.0:7000"
-    restart: always
-    volumes: 
-      - .:/twitterapp
-    container_name: twitterapp
-    ports: 
-      - 7000:7000
+  
+  web_api:
+   stdin_open: true
+   container_name: twitter_api
+   build: .
+   command: python manage.py runserver 0.0.0.0:7000
+   restart: always
+   volumes: 
+     - .:/apptwitter
+   ports: 
+     - 7000:7000
 
   db:
    image: postgres:9.4
@@ -27,6 +26,8 @@ services:
      - POSTGRES_PASSWORD=postgres
    ports:
      - "5432:5432"
+   depends_on:
+     - web_api
 
 
 volumes:
