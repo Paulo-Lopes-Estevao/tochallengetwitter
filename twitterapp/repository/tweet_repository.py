@@ -10,7 +10,7 @@ class tweetRepository():
     def findall_tweets(self) -> Tweet:
         return self.tweet.filter(state=True).values()
 
-    def findbyid_tweets(self, id: int) -> Tweet:
+    def findbyid_tweets(self, id) -> Tweet:
         tweets = self.tweet.objects.filter(id=id)
         return tweets
 
@@ -23,6 +23,9 @@ class tweetRepository():
         tweet.gif = tweets.get('gif',None)
         result_tweet = tweet.save()
         return result_tweet
+
+    def reation_tweets(self, id, reacted)->Tweet:
+        return self.tweet.objects.filter(id=id).update(reation=reacted)
 
     def delete_tweet(self, id) -> Tweet:
         return self.tweet.objects.filter(id=id).update(state=False)
