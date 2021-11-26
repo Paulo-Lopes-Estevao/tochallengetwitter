@@ -23,7 +23,12 @@ class TweetRepositoryTestCase(unittest.TestCase):
         self.assertGreaterEqual(len(tweet), 1, "tweets não publicada cadastrado")
 
     def test_deactivate_tweets(self):
-        pass
+        tweets = self.tweet_usecase.deletebyid_tweet("59b26050-cf1f-4ae6-a017-c95aa7108bc9")
+        self.assertTrue(tweets,"tweets não removido")
+
+    def test_likes_tweets(self):
+        tweets = self.tweet_usecase.likes_in_tweets("59b26050-cf1f-4ae6-a017-c95aa7108bc9")
+        self.assertTrue(tweets, "error in likes")
 
 
 if __name__ == '__main__':
