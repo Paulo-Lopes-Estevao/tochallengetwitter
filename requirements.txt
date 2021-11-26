@@ -1,7 +1,4 @@
-aniso8601==8.1.1
-asgiref==3.3.4
-certifi==2021.5.30
-chardet==4.0.0
 Django==3.2.3
 django-cors-headers==3.7.0
 django-filter==2.4.0
+psycopg2-binary
