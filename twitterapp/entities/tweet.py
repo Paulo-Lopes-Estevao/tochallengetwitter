@@ -1,22 +1,22 @@
 from typing import Type
 from twitterapp.models import Tweet as TwitterModel
 
+
 class Tweet:
 
-
-    def addTweets(self,**tweet):
+    def addTweets(self, **tweet):
         try:
             return tweet
         except Exception as e:
             raise e
 
-    def addRetweets(self,**tweet):
+    def addRetweets(self, **retweet):
         try:
-            return tweet
+            return retweet
         except Exception as e:
             raise e
 
-    def reationTweets(self,tweet: Type[TwitterModel]):
+    def reationTweets(self, tweet: Type[TwitterModel]):
         try:
             reacted = tweet.values()[0].get("reation")
             if reacted == 0 or reacted == None:
