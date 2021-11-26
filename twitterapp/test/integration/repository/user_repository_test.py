@@ -21,6 +21,9 @@ class UserRepositoryTestCase(unittest.TestCase):
         user = self.user_interactor.addUsers(**data_user)
         self.assertEqual(user.get('email'), data_user.get('email'), "usuario cadastrado")
 
+    def test_get_all_users(self):
+        users =self.user_interactor.getUsers()
+        self.assertGreaterEqual(len(users),1)
 
 if __name__ == '__main__':
     unittest.main()
