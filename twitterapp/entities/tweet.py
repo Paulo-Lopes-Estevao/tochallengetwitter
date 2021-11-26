@@ -10,7 +10,7 @@ class Tweet:
         except Exception as e:
             raise e
 
-    def addRetweet(self,**tweet):
+    def addRetweets(self,**tweet):
         try:
             return tweet
         except Exception as e:
