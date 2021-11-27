@@ -8,7 +8,7 @@ class tweetRepository():
         self.tweet = Tweet
 
     def findall_tweets(self) -> Tweet:
-        return self.tweet.filter(state=True).values()
+        return self.tweet.objects.filter(state=True).values()
 
     def findbyid_tweets(self, id) -> Tweet:
         tweets = self.tweet.objects.filter(id=id)
