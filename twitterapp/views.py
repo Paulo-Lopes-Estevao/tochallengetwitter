@@ -18,7 +18,7 @@ tweet_usecase = tweetUsecase(tweetRepository=tweetRepository)
 
 def WelcomeView(request):
     if request.method == 'GET':
-        return JsonResponse({"Bem-vindo"},status=200)
+        return JsonResponse({"message": "Welcome"},status=200)
 
 # Create your views here.
 def UsersView(request):

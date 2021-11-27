@@ -19,7 +19,7 @@ from twitterapp.views import *
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    path('/', csrf_exempt(WelcomeView)),
+    path('', (WelcomeView)),
 
     path('v1/users', csrf_exempt(UsersView)),
 
