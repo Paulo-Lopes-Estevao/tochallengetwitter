@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from twitterapp.views import *
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('/', csrf_exempt(WelcomeView)),
+
+    path('v1/users', csrf_exempt(UsersView)),
+
+    path('v1/retweets', csrf_exempt(RetweetsFeedView)),
+    path('v1/retweets', csrf_exempt(RetweetsView.as_view())),
+    path('v1/retweets/like', csrf_exempt(TweetsLikeView)),
+    path('v1/retweets/<str:id>/', csrf_exempt(RetweetsDeleteView)),
+
+    path('v1/tweets', csrf_exempt(TweetsFeedView)),
+    path('v1/tweets', csrf_exempt(TweetsCreateView)),
+    path('v1/tweets/like', csrf_exempt(TweetsLikeView)),
+    path('v1/tweets/<str:id>/', csrf_exempt(TweetsDeleteView)),
 ]
