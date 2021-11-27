@@ -17,7 +17,7 @@ class UserRepositoryTestCase(unittest.TestCase):
         self.user_interactor = userInteractor(userRepository=userRepository)
 
     def test_create_user(self):
-        data_user = {"name": 'John', 'telefone': '923453925', 'email': "pl@gmail.com", 'password': '1234'}
+        data_user = {"name": 'paulo', 'telefone': '923453925', 'email': "jhon@gmail.com", 'password': '1234'}
         user = self.user_interactor.addUsers(**data_user)
         self.assertEqual(user.get('email'), data_user.get('email'), "usuario cadastrado")
 
