@@ -23,7 +23,7 @@ class RetweetRepositoryTestCase(unittest.TestCase):
         self.assertGreaterEqual(len(retweet), 1, "retweets não publicada cadastrado")
 
     def test_deactivate_retweets(self):
-        retweets = self.retweet_usecase.deletebyid_retweet("59b26050-cf1f-4ae6-a017-c95aa7108bc9")
+        retweets = self.retweet_usecase.deletebyid_retweet("7b0c72bb-419a-40b6-b4d7-ddab519722c3")
         self.assertTrue(retweets, "retweets não removido")
 
     def test_likes_retweets(self):
