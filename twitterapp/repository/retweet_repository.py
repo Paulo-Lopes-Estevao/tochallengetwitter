@@ -8,7 +8,7 @@ class retweetRepository():
         self.retweet = Retweet
 
     def findall_retweets(self) -> Retweet:
-        return self.retweet.filter(state=True).values()
+        return self.retweet.objects.filter(state=True).values()
 
     def findbyid_retweets(self, id) -> Retweet:
         retweets = self.retweet.objects.filter(id=id)
